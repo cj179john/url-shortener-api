@@ -541,6 +541,32 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@mikro-orm/core@^4.4.4":
+  version "4.4.4"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@mikro-orm/core/-/core-4.4.4.tgz#32de2c02b6ac3d983d7cb808f261f28bb4dc8e15"
+  integrity sha1-Mt4sArasPZg9fLgI8mHyi7TcjhU=
+  dependencies:
+    ansi-colors "4.1.1"
+    clone "2.1.2"
+    escaya "0.0.61"
+    fs-extra "9.1.0"
+    globby "11.0.2"
+    reflect-metadata "0.1.13"
+    strip-json-comments "3.1.1"
+
+"@mikro-orm/mongodb@^4.4.4":
+  version "4.4.4"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@mikro-orm/mongodb/-/mongodb-4.4.4.tgz#bb53eaa1126061d54275929944b174a03e5237f9"
+  integrity sha1-u1PqoRJgYdVCdZKZRLF0oD5SN/k=
+  dependencies:
+    "@types/mongodb" "3.6.8"
+    mongodb "3.6.4"
+
+"@mikro-orm/nestjs@^4.2.0":
+  version "4.2.0"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@mikro-orm/nestjs/-/nestjs-4.2.0.tgz#beeac608ffe6e107835f202939f2fdba667299df"
+  integrity sha1-vurGCP/m4QeDXyApOfL9umZymd8=
+
 "@nestjs/cli@^7.5.6":
   version "7.5.6"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@nestjs/cli/-/cli-7.5.6.tgz#f52a7cf6215149c2e561070b5edf40debecb06b7"
@@ -719,6 +745,13 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/bson@*":
+  version "4.0.3"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@types/bson/-/bson-4.0.3.tgz#30889d2ffde6262abbe38659364c631454999fbf"
+  integrity sha1-MIidL/3mJiq744ZZNkxjFFSZn78=
+  dependencies:
+    "@types/node" "*"
+
 "@types/connect@*":
   version "3.4.34"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@types/connect/-/connect-3.4.34.tgz#170a40223a6d666006d93ca128af2beb1d9b1901"
@@ -824,6 +857,14 @@
   version "1.3.2"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
   integrity sha1-k+Jb+e51/g/YC1lLxP6w6GIRG1o=
+
+"@types/mongodb@3.6.8":
+  version "3.6.8"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/@types/mongodb/-/mongodb-3.6.8.tgz#f80f0a3022c44d8db659a936434403ca3f4661df"
+  integrity sha1-+A8KMCLETY22Wak2Q0QDyj9GYd8=
+  dependencies:
+    "@types/bson" "*"
+    "@types/node" "*"
 
 "@types/node@*", "@types/node@^14.14.31":
   version "14.14.31"
@@ -1478,6 +1519,14 @@ binary-extensions@^2.0.0:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha1-dfUC7q+f/eQvyYgpZFvk6na9ni0=
 
+bl@^2.2.1:
+  version "2.2.1"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/bl/-/bl-2.2.1.tgz#8c11a7b730655c5d56898cdc871224f40fd901d5"
+  integrity sha1-jBGntzBlXF1WiYzchxIk9A/ZAdU=
+  dependencies:
+    readable-stream "^2.3.5"
+    safe-buffer "^5.1.1"
+
 bl@^4.0.3:
   version "4.1.0"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/bl/-/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -1563,6 +1612,11 @@ bser@2.1.1:
   integrity sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=
   dependencies:
     node-int64 "^0.4.0"
+
+bson@^1.1.4:
+  version "1.1.5"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/bson/-/bson-1.1.5.tgz#2aaae98fcdf6750c0848b0cba1ddec3c73060a34"
+  integrity sha1-Kqrpj832dQwISLDLod3sPHMGCjQ=
 
 buffer-from@1.x, buffer-from@^1.0.0:
   version "1.1.1"
@@ -1749,6 +1803,11 @@ cliui@^6.0.0:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
+
+clone@2.1.2:
+  version "2.1.2"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 clone@^1.0.2:
   version "1.0.4"
@@ -2043,6 +2102,11 @@ delayed-stream@~1.0.0:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
+denque@^1.4.1:
+  version "1.5.0"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/denque/-/denque-1.5.0.tgz#773de0686ff2d8ec2ff92914316a47b73b1c73de"
+  integrity sha1-dz3gaG/y2Owv+SkUMWpHtzscc94=
+
 depd@~1.1.2:
   version "1.1.2"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
@@ -2199,6 +2263,11 @@ escape-string-regexp@^2.0.0:
   version "2.0.0"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
   integrity sha1-owME6Z2qMuI7L9IPUbq9B8/8o0Q=
+
+escaya@0.0.61:
+  version "0.0.61"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/escaya/-/escaya-0.0.61.tgz#f87a89dd43d877c86b06b55b78b7a465cd2c5c3a"
+  integrity sha1-+HqJ3UPYd8hrBrVbeLekZc0sXDo=
 
 escodegen@^1.14.1:
   version "1.14.3"
@@ -2806,7 +2875,7 @@ globals@^12.1.0:
   dependencies:
     type-fest "^0.8.1"
 
-globby@^11.0.1:
+globby@11.0.2, globby@^11.0.1:
   version "11.0.2"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/globby/-/globby-11.0.2.tgz#1af538b766a3b540ebfb58a32b2e2d5897321d83"
   integrity sha1-GvU4t2ajtUDr+1ijKy4tWJcyHYM=
@@ -3963,6 +4032,11 @@ memory-fs@^0.5.0:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
+memory-pager@^1.0.2:
+  version "1.5.0"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/memory-pager/-/memory-pager-1.5.0.tgz#d8751655d22d384682741c972f2c3d6dfa3e66b5"
+  integrity sha1-2HUWVdItOEaCdByXLyw9bfo+ZrU=
+
 merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
@@ -4068,6 +4142,19 @@ mkdirp@^0.5.1:
   integrity sha1-2Rzv1i0UNsoPQWIOJRKI1CAJne8=
   dependencies:
     minimist "^1.2.5"
+
+mongodb@3.6.4:
+  version "3.6.4"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/mongodb/-/mongodb-3.6.4.tgz#ca59fd65b06831308262372ef9df6b78f9da97be"
+  integrity sha1-yln9ZbBoMTCCYjcu+d9rePnal74=
+  dependencies:
+    bl "^2.2.1"
+    bson "^1.1.4"
+    denque "^1.4.1"
+    require_optional "^1.0.1"
+    safe-buffer "^5.1.2"
+  optionalDependencies:
+    saslprep "^1.0.0"
 
 ms@2.0.0:
   version "2.0.0"
@@ -4648,7 +4735,7 @@ readable-stream@1.1.x:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.1, readable-stream@^2.2.2:
+readable-stream@^2.0.1, readable-stream@^2.2.2, readable-stream@^2.3.5:
   version "2.3.7"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/readable-stream/-/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
   integrity sha1-Hsoc9xGu+BTAT2IlKjamL2yyO1c=
@@ -4684,7 +4771,7 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-reflect-metadata@^0.1.13:
+reflect-metadata@0.1.13, reflect-metadata@^0.1.13:
   version "0.1.13"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
@@ -4774,12 +4861,25 @@ require-main-filename@^2.0.0:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=
 
+require_optional@^1.0.1:
+  version "1.0.1"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
+  integrity sha1-TPNaQkf2TKPfjC7yCMxJSxyo/C4=
+  dependencies:
+    resolve-from "^2.0.0"
+    semver "^5.1.0"
+
 resolve-cwd@^3.0.0:
   version "3.0.0"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/resolve-cwd/-/resolve-cwd-3.0.0.tgz#0f0075f1bb2544766cf73ba6a6e2adfebcb13f2d"
   integrity sha1-DwB18bslRHZs9zumpuKt/ryxPy0=
   dependencies:
     resolve-from "^5.0.0"
+
+resolve-from@^2.0.0:
+  version "2.0.0"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
+  integrity sha1-lICrIOlP+h2egKgEx+oUdhGWa1c=
 
 resolve-from@^4.0.0:
   version "4.0.0"
@@ -4865,7 +4965,7 @@ safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha1-mR7GnSluAxN0fVm9/St0XDX4go0=
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
+safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
@@ -4897,6 +4997,13 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
+saslprep@^1.0.0:
+  version "1.0.3"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/saslprep/-/saslprep-1.0.3.tgz#4c02f946b56cf54297e347ba1093e7acac4cf226"
+  integrity sha1-TAL5RrVs9UKX40e6EJPnrKxM8iY=
+  dependencies:
+    sparse-bitfield "^3.0.3"
+
 saxes@^5.0.0:
   version "5.0.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/saxes/-/saxes-5.0.1.tgz#eebab953fa3b7608dbe94e5dadb15c888fa6696d"
@@ -4922,7 +5029,7 @@ schema-utils@^3.0.0:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
-"semver@2 || 3 || 4 || 5", semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.5.0:
   version "5.7.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha1-qVT5Ma66UI0we78Gnv8MAclhFvc=
@@ -5136,6 +5243,13 @@ sourcemap-codec@^1.4.4:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
   integrity sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=
 
+sparse-bitfield@^3.0.3:
+  version "3.0.3"
+  resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/sparse-bitfield/-/sparse-bitfield-3.0.3.tgz#ff4ae6e68656056ba4b3e792ab3334d38273ca11"
+  integrity sha1-/0rm5oZWBWuks+eSqzM004JzyhE=
+  dependencies:
+    memory-pager "^1.0.2"
+
 spdx-correct@^3.0.0:
   version "3.1.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/spdx-correct/-/spdx-correct-3.1.1.tgz#dece81ac9c1e6713e5f7d1b6f17d468fa53d89a9"
@@ -5297,7 +5411,7 @@ strip-final-newline@^2.0.0:
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=
 
-strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
+strip-json-comments@3.1.1, strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://cambridge.jfrog.io/artifactory/api/npm/npm-lib/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha1-MfEoGzgyYwQ0gxwxDAHMzajL4AY=
