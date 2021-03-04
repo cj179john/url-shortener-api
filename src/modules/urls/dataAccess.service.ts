@@ -1,6 +1,6 @@
 import { EntityManager } from '@mikro-orm/mongodb';
 import { Injectable } from '@nestjs/common';
-import { MongoUrl } from 'src/entities/Url';
+import { MongoUrl } from '../../entities/Url';
 
 export interface DataAccess {
   addOne(shortForm: string, originalForm: string): Promise<MongoUrl>;
