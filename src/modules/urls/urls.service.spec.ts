@@ -11,11 +11,14 @@ describe('Url Service', () => {
   const returnedHash = 'o242zd5x';
   const mockDataAccess = jest.fn(() => ({
     addOne: jest.fn(),
+    findOne: jest.fn(),
   }));
 
   const mockUtils = jest.fn(() => ({
     getUniqueHarsh: jest.fn().mockReturnValue(returnedHash),
   }));
+
+  const url = 'http://my-test.com';
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
@@ -39,7 +42,7 @@ describe('Url Service', () => {
 
   it('should add one record', async () => {
     // Assign
-    const fixture = { url: 'http://my-test.com' };
+    const fixture = { url };
 
     // Act
     await urlService.add(fixture);
@@ -47,5 +50,20 @@ describe('Url Service', () => {
     // Assert
     expect(utils.getUniqueHarsh).toBeCalled();
     expect(dataAccess.addOne).toBeCalledWith(returnedHash, fixture.url);
+  });
+
+  it('should get one record', async () => {
+    // Assign
+    const fixture = 'test-code';
+    const expected = { url };
+
+    (dataAccess.findOne as jest.Mock).mockResolvedValue(expected);
+
+    // Act
+    const result = await urlService.findByCode(fixture);
+
+    // Assert
+    expect(dataAccess.findOne).toBeCalledWith(fixture);
+    expect(result).toEqual(expected);
   });
 });

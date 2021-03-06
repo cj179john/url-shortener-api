@@ -6,6 +6,7 @@ import { DataAccessImpl } from './dataAccess.service';
 
 export interface UrlService {
   add(dto: UrlDto): Promise<Url>;
+  findByCode(code: string): Promise<Url>;
 }
 @Injectable()
 export class UrlServiceImpl implements UrlService {
