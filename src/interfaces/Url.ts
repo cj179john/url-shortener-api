@@ -3,8 +3,3 @@ export interface Url {
   url: string;
   urlCode: string;
 }
-
-export interface UrlDto {
-  url: string;
-  urlCode: string;
-}

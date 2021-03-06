@@ -1,7 +1,4 @@
-export interface UrlInboundDto {
-  url: string;
-}
-
-export interface UrlOutboundDto {
-  urlCode: string;
+export interface UrlDto {
+  url?: string;
+  urlCode?: string;
 }

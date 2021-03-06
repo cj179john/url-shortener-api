@@ -14,4 +14,8 @@ export class DataAccessImpl implements DataAccess {
     await this.em.persistAndFlush(newUrl);
     return newUrl;
   }
+
+  public async findOne(urlCode: string) {
+    return await this.em.findOne(MongoUrl, { urlCode });
+  }
 }

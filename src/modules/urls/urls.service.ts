@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { UtilsServiceImpl } from '../../commons/utils.service';
 import { Url } from '../../interfaces/url';
-import { UrlInboundDto } from '../../interfaces/UrlDto';
+import { UrlDto } from '../../interfaces/UrlDto';
 import { DataAccessImpl } from './dataAccess.service';
 
 export interface UrlService {
-  add(dto: UrlInboundDto): Promise<Url>;
+  add(dto: UrlDto): Promise<Url>;
 }
 @Injectable()
 export class UrlServiceImpl implements UrlService {
@@ -14,8 +14,12 @@ export class UrlServiceImpl implements UrlService {
     private readonly utils: UtilsServiceImpl,
   ) {}
 
-  public async add({ url }: UrlInboundDto) {
+  public async add({ url }: UrlDto) {
     const urlCode = this.utils.getUniqueHarsh();
     return await this.dataAccessService.addOne(urlCode, url);
+  }
+
+  public async findByCode(urlCode: string) {
+    return await this.dataAccessService.findOne(urlCode);
   }
 }
