@@ -3,5 +3,5 @@ export interface UrlInboundDto {
 }
 
 export interface UrlOutboundDto {
-  shortForm: string;
+  urlCode: string;
 }

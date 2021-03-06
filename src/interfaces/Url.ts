@@ -1,10 +1,10 @@
 export interface Url {
   id: string;
-  originalForm: string;
-  shortForm: string;
+  url: string;
+  urlCode: string;
 }
 
 export interface UrlDto {
-  originalForm: string;
-  shortForm: string;
+  url: string;
+  urlCode: string;
 }

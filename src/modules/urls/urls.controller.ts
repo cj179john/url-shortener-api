@@ -8,13 +8,13 @@ export class UrlsController {
   constructor(private readonly service: UrlServiceImpl) {}
 
   @Get()
-  public async findAll(): Promise<UrlDto[]> {
-    return [];
+  public async find(): Promise<UrlDto> {
+    return {} as UrlDto;
   }
 
   @Post()
   async addOne(@Body() body: UrlInboundDto): Promise<UrlOutboundDto> {
     const result = await this.service.add(body);
-    return { shortForm: result.shortForm };
+    return { urlCode: result.urlCode };
   }
 }

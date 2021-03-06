@@ -1,12 +1,14 @@
-import { ObjectId } from '@mikro-orm/mongodb';
 import {
   Entity,
+  Index,
   PrimaryKey,
   Property,
   SerializedPrimaryKey,
 } from '@mikro-orm/core';
+import { ObjectId } from '@mikro-orm/mongodb';
 
 @Entity()
+@Index({ name: 'urlCode_index', properties: ['urlCode'] })
 export class MongoUrl {
   @PrimaryKey()
   _id: ObjectId;
@@ -15,13 +17,13 @@ export class MongoUrl {
   id: string;
 
   @Property()
-  shortForm: string;
+  urlCode: string;
 
   @Property()
-  originalForm: string;
+  url: string;
 
-  constructor(short: string, original: string) {
-    this.shortForm = short;
-    this.originalForm = original;
+  constructor(code: string, url: string) {
+    this.urlCode = code;
+    this.url = url;
   }
 }
