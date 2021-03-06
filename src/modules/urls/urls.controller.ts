@@ -1,4 +1,11 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { UrlDto } from '../../interfaces/urlDto';
 import { UrlServiceImpl } from '../../modules/urls/urls.service';
 
@@ -10,10 +17,14 @@ export class UrlsController {
   constructor(private readonly service: UrlServiceImpl) {}
 
   @Get()
-  public async find(@Param() params: UrlParams): Promise<UrlDto> {
-    const { urlCode } = params;
-    const { url } = await this.service.findByCode(urlCode);
-    return { url, urlCode };
+  public async find(@Query('urlCode') urlCode: string): Promise<UrlDto> {
+    const result = await this.service.findByCode(urlCode);
+
+    if (!result) {
+      throw new NotFoundException();
+    }
+
+    return { url: result.url, urlCode };
   }
 
   @Post()
