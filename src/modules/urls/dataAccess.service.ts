@@ -16,6 +16,15 @@ export class DataAccessImpl implements DataAccess {
   }
 
   public async findOne(urlCode: string) {
-    return await this.em.findOne(MongoUrl, { urlCode });
+    const result = await this.em
+      .getConnection()
+      .getDb()
+      .collection('urls')
+      .findOne({ urlCode });
+
+    //const result = await this.em.findOne(MongoUrl, { urlCode });
+    console.log('result', result);
+
+    return result;
   }
 }
