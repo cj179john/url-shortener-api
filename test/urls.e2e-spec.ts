@@ -1,46 +1,40 @@
 import { INestApplication } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
-import MongoClient from 'mongodb';
 import request from 'supertest';
-import configuration from '../src/modules/config/configuration';
+import { MongoUrl } from '../src/entities/Url';
+import ConfigModule from '../src/modules/config/config.module';
 import DataModule from '../src/modules/db.module';
 import { UrlsModule } from '../src/modules/urls/urls.module';
+import { FixtureServiceImpl } from './config/FixtureService';
 
 describe('UrlsController (e2e)', () => {
   let app: INestApplication;
-  let connection: MongoClient.MongoClient;
-  let db: MongoClient.Db;
-  let urls: MongoClient.Collection;
   let server: unknown;
+  let fixtureService: FixtureServiceImpl<MongoUrl>;
 
-  const mockData = { url: 'http://test.com', urlCode: '9kmin6ou' };
-  const configs = configuration()['database'];
-
-  beforeAll(async () => {
-    connection = await MongoClient.connect(
-      `mongodb://${configs['host']}:${configs['port']}`,
-      { useNewUrlParser: true },
-    );
-    db = connection.db(configs['db']);
-
-    urls = db.collection('urls');
-
-    await urls.insertOne(mockData);
-  });
-
-  afterAll(async () => {
-    await urls.deleteMany({});
-    await connection.close();
-  });
+  const mockData = new MongoUrl('http://test.com', '9kmin6ou');
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [UrlsModule, DataModule],
+      imports: [UrlsModule, DataModule, ConfigModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
+
+    const configService = app.get(ConfigService);
+
+    fixtureService = new FixtureServiceImpl<MongoUrl>(configService);
+    await fixtureService.initialise('urls');
+    await fixtureService.create([mockData]);
+
     server = app.getHttpServer();
+  });
+
+  afterEach(async () => {
+    await fixtureService.emptyCollection();
+    await fixtureService.closeConnection();
   });
 
   describe('Get', () => {
@@ -53,14 +47,14 @@ describe('UrlsController (e2e)', () => {
         .expect({ urlCode: mockData.urlCode, url: mockData.url });
     });
 
-    //it('should throw 404 if url not found', () => {
-    //  // Act & Assert
-    //  return request(app.getHttpServer())
-    //    .get('/urls')
-    //    .query({ urlCode: 'non-exists' })
-    //    .expect(404)
-    //    .expect({ statusCode: 404, message: 'Not Found' });
-    //});
+    it('should throw 404 if url not found', () => {
+      // Act & Assert
+      return request(app.getHttpServer())
+        .get('/urls')
+        .query({ urlCode: 'non-exists' })
+        .expect(404)
+        .expect({ statusCode: 404, message: 'Not Found' });
+    });
   });
 
   //describe('Post', () => {
