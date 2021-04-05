@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import MongoClient from 'mongodb';
 import request from 'supertest';
-import { testConfigs } from '../src/configs/index';
+import configuration from '../src/modules/config/configuration';
 import DataModule from '../src/modules/db.module';
 import { UrlsModule } from '../src/modules/urls/urls.module';
 
@@ -11,15 +11,17 @@ describe('UrlsController (e2e)', () => {
   let connection: MongoClient.MongoClient;
   let db: MongoClient.Db;
   let urls: MongoClient.Collection;
+  let server: unknown;
 
   const mockData = { url: 'http://test.com', urlCode: '9kmin6ou' };
+  const configs = configuration()['database'];
 
   beforeAll(async () => {
     connection = await MongoClient.connect(
-      `mongodb://${testConfigs.mongoUrl}:${testConfigs.mongoPort}`,
+      `mongodb://${configs['host']}:${configs['port']}`,
       { useNewUrlParser: true },
     );
-    db = connection.db(testConfigs.mongoDB);
+    db = connection.db(configs['db']);
 
     urls = db.collection('urls');
 
@@ -38,12 +40,13 @@ describe('UrlsController (e2e)', () => {
 
     app = moduleFixture.createNestApplication();
     await app.init();
+    server = app.getHttpServer();
   });
 
   describe('Get', () => {
     it('should get single url', () => {
       // Act & Assert
-      return request(app.getHttpServer())
+      return request(server)
         .get(`/urls`)
         .query({ urlCode: mockData.urlCode })
         .expect(200)

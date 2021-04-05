@@ -1,12 +1,16 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
-import configs from '../configs';
+import configuration from './config/configuration';
+
+const configs = configuration()['database'];
+console.log('configs', configs);
 
 const DataModule = MikroOrmModule.forRoot({
   entities: ['../../dist/entities'],
   entitiesTs: ['../entities'],
   type: 'mongo',
   baseDir: __dirname,
-  clientUrl: `mongodb://${configs.mongoUrl}:${configs.mongoPort}/${configs.mongoDB}`,
+  autoLoadEntities: true,
+  clientUrl: `mongodb://${configs['host']}:${configs['port']}/${configs['db']}`,
 });
 
 export default DataModule;
