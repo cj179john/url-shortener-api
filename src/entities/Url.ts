@@ -7,7 +7,7 @@ import {
 } from '@mikro-orm/core';
 import { ObjectId } from '@mikro-orm/mongodb';
 
-@Entity()
+@Entity({ collection: 'urls' })
 @Index({ name: 'urlCode_index', properties: ['urlCode'] })
 export class MongoUrl {
   @PrimaryKey()

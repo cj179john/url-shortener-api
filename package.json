@@ -18,13 +18,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:api": "export API_ENV=test && jest --config ./test/jest-e2e.json --detectOpenHandles"
   },
   "dependencies": {
     "@mikro-orm/core": "^4.4.4",
     "@mikro-orm/mongodb": "^4.4.4",
     "@mikro-orm/nestjs": "^4.2.0",
     "@nestjs/common": "^7.6.13",
+    "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^7.6.13",
     "@nestjs/platform-express": "^7.6.13",
     "reflect-metadata": "^0.1.13",
@@ -35,6 +36,7 @@
     "@nestjs/cli": "^7.5.6",
     "@nestjs/schematics": "^7.2.7",
     "@nestjs/testing": "^7.6.13",
+    "@shelf/jest-mongodb": "^1.2.3",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
