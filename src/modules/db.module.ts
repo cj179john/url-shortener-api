@@ -1,14 +1,14 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
+import { MongoUrl } from '../entities/Url';
 import configuration from './config/configuration';
 
 // @TODO, this can be done more natively within the DI scope of NestJS
 const configs = configuration()['database'];
 
 const DataModule = MikroOrmModule.forRoot({
-  entities: ['../../dist/entities'],
-  entitiesTs: ['../entities'],
+  entities: [MongoUrl],
+  entitiesTs: ['./src/entities'],
   type: 'mongo',
-  baseDir: __dirname,
   autoLoadEntities: true,
   clientUrl: `mongodb://${configs['host']}:${configs['port']}/${configs['db']}`,
 });

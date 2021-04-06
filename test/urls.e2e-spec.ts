@@ -49,7 +49,7 @@ describe('UrlsController (e2e)', () => {
 
     it('should throw 404 if url not found', () => {
       // Act & Assert
-      return request(app.getHttpServer())
+      return request(server)
         .get('/urls')
         .query({ urlCode: 'non-exists' })
         .expect(404)
@@ -57,16 +57,13 @@ describe('UrlsController (e2e)', () => {
     });
   });
 
-  //describe('Post', () => {
-  //  it('should create a single url', () => {
-  //    // Assign
-  //    findOneMock.mockResolvedValue(mockData);
-
-  //    // Act & Assert
-  //    return request(app.getHttpServer())
-  //      .post('/urls')
-  //      .send(mockData)
-  //      .expect(200);
-  //  });
-  //});
+  describe('Post', () => {
+    it('should create a single url', () => {
+      // Act & Assert
+      return request(server)
+        .post('/urls')
+        .send({ url: mockData.url })
+        .expect(201);
+    });
+  });
 });
